@@ -28,7 +28,7 @@ print(args)
 
 
 def convert_data(input_list, output_file, groundtruth_dir, pdbbind_dir, label_list_file):
-	cmd_str = f'python convert_data_to_disk.py --input_list={input_list} --output_file={output_file} --thread_num=1 '
+	cmd_str = f'python /content/Medusa-graph/convert_data_to_disk.py --input_list={input_list} --output_file={output_file} --thread_num=1 '
 	cmd_str = cmd_str + f'--use_new_data --bond_th=6 --pocket_th=12 --groundtruth_dir={groundtruth_dir} '
 	cmd_str = cmd_str + f'--pdbbind_dir={pdbbind_dir} --label_list_file={label_list_file} --dataset=coor2 --pdb_version=2016'
 
