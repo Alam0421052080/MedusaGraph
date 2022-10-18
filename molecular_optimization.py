@@ -136,12 +136,12 @@ def get_refined_pose_file(mol2_file, output_mol2_file, ligand):
 	# print(lines[l + 2])
 	lines[l + 2] = _set_num(nonH_atom - 1, 5) + _set_num(bond_id - 1, 6) + lines[l + 2][11:]
 
-	with open('tmp_mol.mol2', 'w') as f:
+	with open('/content/tmp_mol.mol2', 'w') as f:
 		for line in lines:
 			f.write(line)
 
-	os.system('obminimize tmp_mol.mol2 > tmp_mol.pdb')
-	os.system(f'obabel -ipdb tmp_mol.pdb -omol2 -O {output_mol2_file}')
+	os.system('obminimize /content/tmp_mol.mol2 > /content/tmp_mol.pdb')
+	os.system(f'obabel -ipdb /content/tmp_mol.pdb -omol2 -O {output_mol2_file}')
 	os.system('rm tmp_mol.mol2')
 	os.system('rm tmp_mol.pdb')
 
